@@ -133,3 +133,6 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# SCHOOLBAG CONFIG
+YEAR_CUT_OFF_MONTH = 8
