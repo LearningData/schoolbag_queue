@@ -7,7 +7,6 @@ var dashboard = (function() {
     var classList
 
     function init() {
-        alert("AAAAS")
         $('.dashboard-head').on('click', function(event) {
             if ($( event.target ).closest('.ui-datepicker-calendar').length >0) {
                 return
@@ -16,7 +15,6 @@ var dashboard = (function() {
             window.location.href = urlBase + getUser() + '/' +
                 event.currentTarget.getAttribute("data-panel-type")
         })
-
         $.get(urlBase + "service/classes", function(response) {
             classList = response.classes
             populatePanels()
@@ -153,7 +151,7 @@ var dashboard = (function() {
         })
     }
     function populateNotices() {
-        var url = urlBase + "notice/jsonNotices/"
+        var url = urlBase + "service/notices/"
         $.get(url, function(response) {
             var notices = response.notices
             var items = []
