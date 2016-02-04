@@ -1,0 +1,40 @@
+/*.orange a,*/
+.orange .ld-new-buttons a, .orange .ld-icon-new, .orange .ld-new-buttons,
+.orange .ld-card-border h4.subject, .orange .btn-review-many, .orange .no-content .action,
+.orange .ld-checkbox input:checked + .display:before, .orange .color, .orange #homeworkSearch .icon-sign,
+.orange .btn-add, .orange .btn-download{
+  color: #f7941d;
+}
+
+/* default background */
+.orange header, .orange .btn-icon, .orange .action, .orange .btn, .orange .tooltip-inner, .orange.ld-homework .nav ul li a,
+.orange.ld-homework .table [class^="btn-"], .orange.ld-box .ld-box-head .dashboard-head, .orange .ld-student-status a,
+.orange div.ld-CheckClass span.checked, .orange div.ld-CheckClass.hover span.checked, .orange div.ld-RadioClass span.checked,
+.orange div.ld-RadioClass.hover span.checked, .orange .view-grid-list button, table.ui-datepicker-calendar td.active.orange a,
+.orange .btn.toggle.active, .orange .ld-checkbox input:checked + .display, .orange #homeworkSearch .resource-type.active {
+  background-color: #f7941d;
+}
+/* hover background */
+.orange .btn-icon:hover, .orange .btn-icon:focus, .orange.ld-homework .table [class^="btn-"]:hover {
+  background-color: #f47920;
+}
+.orange #homeworkSearch .resource-type.active .icon-sign {
+  border-color: #f7941d;
+}
+.orange .form-control:focus, .orange input:focus, .orange textarea:focus {
+  border-color: #f7941d;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(247, 148, 30, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(247, 148, 40, 0.6);
+}
+.orange .modal-title, .orange div.ld-CheckClass span, .orange div.ld-CheckClass.hover span, .orange div.ld-RadioClass span,
+.orange div.ld-RadioClass.hover span, .orange .ld-checkbox input + .display, .orange .checkall .ld-CheckClass {
+  border-color: #f7941d;
+}
+.orange .ld-tabs.nav ul li.active a {
+    border-bottom-color: #760900;
+}
+/* tooltip border arrow */
+.orange .tooltip.top .tooltip-arrow {
+  border-top-color: #f7941d;
+}

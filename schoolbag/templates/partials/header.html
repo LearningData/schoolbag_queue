@@ -1,0 +1,60 @@
+<header>
+    {% load static %}
+    {% load i18n %}
+    {% if not user.is_guardian %}
+        <a class="schoolbag-brand" href="dashboard">
+        <img src="{% static 'img/logo.png' %}" width="153" height="46">
+        </a>
+    {% else %}
+        <a class="schoolbag-brand" href="guardian">
+            <img src="{% static 'img/logo.png' %}" width="153" height="46">
+        </a>
+    {% endif %}
+    <div class="profile">
+        <button type="button" class="navbar-toggle fa fa-bars"
+            data-toggle="collapse" data-target=".nav-collapse"></button>
+        <div class="user-profile">
+            {% if user.is_guardian %}
+                <div class="tb-user tb-user-guardian"></div>
+            {% else %}
+                <div class="tb-user">
+                <img src="{{ user.get_avatar }}" width="67" height="62">
+                </div>
+            {% endif %}
+            <span class="name-school">
+                {{ user.full_name }}
+                <br>
+                <strong>{{ user.school.name }}</strong>
+                <button type="button"
+                class="fa fa-caret-down btn-profile-actions"></button>
+            </span>
+            <div class="user-profile-actions">
+                {% if not user.is_guardian %}
+                <a href="edit/"
+                    class="btn-profile">
+                    <span class="fa fa-user"></span> {% trans "profile" %}
+                </a>
+                {% endif %}
+                <a href="school/index"
+                    class="profile-item grey">
+                    <span class="fa fa-building"></span> {% trans "school-info" %}
+                </a>
+                <a href="changePassword/"
+                    class="btn-chg-password">
+                    <span class="fa fa-lock"></span> {% trans "change-password" %}
+                </a>
+                <a href="http://learningdata.ie/schoolbag/support"
+                    class="btn-support" target="_blank">
+                    <span class="fa fa-support"></span> {% trans "support" %}
+                    <span class="fa fa-external-link"></span>
+                </a>
+                <a href="session/logout/"
+                    class="btn-logout">
+                    <span class="fa fa-power-off"></span>
+                    {% trans "logout" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+

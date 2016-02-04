@@ -1,0 +1,893 @@
+/* teacher homeworkitems list view*/
+.ld-homework.list-items table tr .fa-caret-down {
+  font-size: 20px;
+}
+.ld-homework.list-items td.reviewed .ld-CheckClass {
+  visibility: hidden;
+}
+.ld-homework.list-items[data-status="3"] td.reviewed .ld-CheckClass {
+  display: none;
+}
+.ld-homework .homework-item {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: table;
+  width: 100%;
+  border: 1px solid #e6e7e8;
+}
+.ld-homework .header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #e6e7e8;
+}
+.ld-homework.list-items .desc {
+  font-size: 15px;
+}
+.ld-homework. .file-row .btn-remove {
+  margin-left: 10px;
+}
+.table-review.table .collapse-toggle  {
+  height: 50px;
+}
+.table-review.table td img.tb-profile  {
+  margin: 0 10px 0 0;
+}
+.table-review.table .ld-CheckClass {
+  margin: 10px 10px 0 0;
+}
+.ld-homework.list-items .review-label {
+  vertical-align: middle;
+}
+.ld-homework.list-items .review-label .completed, .ld-homework.list-items .review-label .status {
+  color: #939598;
+  margin-left:5px;
+}
+.ld-homework.list-items .content-box {
+  margin: 10px 0 0;
+}
+.ld-homework.list-items .content-box {
+  background: none repeat scroll 0 0 #fff;
+  margin: 15px -10px -20px;
+  padding: 10px 10px 30px;
+}
+.ld-homework.list-items .feedback-stamp {
+  vertical-align: top;
+  display: block;
+  position: relative;
+}
+.ld-homework.list-items .feedback-block {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
+  color: #939598;
+}
+.ld-homework.list-items .mark-option.stamp {
+  margin: 0 5px;
+}
+.ld-homework.list-items .mark-option.stamp svg {
+  vertical-align: middle;
+}
+.ld-homework.list-items a .fa-download {
+  margin-left: 20px;
+}
+#homeworkSearch .overdue-count {
+  color: #dc3b42;
+  display: inline-block;
+  margin: 0 5px;
+}
+#homeworkSearch .overdue-count .icon-sign {
+  border: none;
+  color: #dc3b42;
+  font-size: 18px;
+  vertical-align: -15%;
+}
+#homeworkSearch .resource-type.overdue-count.active {
+  background-color: #dc3b42;
+}
+.ld-homework .title-status  {
+  width: calc(100% - 155px);
+  display: inline-block;
+  cursor: pointer;
+}
+.ld-homework[data-status="3"] td.reviewed .title-status {
+  width: calc(100% - 120px);
+  cursor: pointer;
+}
+.ld-homework .title-status .h5.review-label {
+  margin: 0;
+}
+
+/* homework time remaining icons */
+.ld-homework.list-items .time-remaining-icon {
+  font-size: 20px;
+  vertical-align: middle;
+  width: 20px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 14px;
+}
+.ld-homework.list-items .time-remaining-icon.overdue .ld-icon-sw-0:before {
+  content: '\e613'
+}
+.ld-homework.list-items .time-remaining-icon.overdue {
+  color: #DC3B42;
+}
+.ld-homework.list-items .time-remaining-icon.full .ld-icon-sw-0:before {
+  content: '\e613'
+}
+.ld-homework.list-items .time-remaining-icon.soon .ld-icon-sw-0:before {
+  content: '\e612'
+}
+.ld-homework.list-items .time-remaining-icon.middle .ld-icon-sw-0:before {
+  content: '\e611'
+}
+.ld-homework.list-items .time-remaining-icon.start .ld-icon-sw-0:before {
+    content: '\e610';
+}
+/* ontime and late for submitted homeworks */
+.ld-homework.list-items .time-remaining-icon.ontime {
+  color: #10a236;
+}
+.ld-homework.list-items .time-remaining-icon.reviewed {
+  color: #70c786;
+}
+.ld-homework.list-items .time-remaining-icon.late {
+  color: #e6767b;
+}
+/* new/edit homework */
+.ld-homework form.new .file-required {
+  margin-top: 5px;
+}
+.homework-text form {
+  padding: 0;
+}
+.ld-homework .file-description  {
+  display: block;
+}
+
+/* end new styles */
+
+.ld-homework .subheader {
+  font-weight: 100;
+  padding: 10px 0 10px 0;
+  font-size: 20px;
+  margin: 0;
+}
+.ld-homework .nav {
+  clear: both;
+}
+.ld-homework .nav ul li a {
+  width: 25%;
+  height: 60px;
+  float: left;
+  text-align: center;
+  font-size: 18px;
+  padding: 18px 0 0;
+  font-weight: 300;
+  color: #fff;
+}
+.ld-homework .nav ul li a:hover {
+  text-decoration: none;
+  border-bottom: #760900 solid 5px;
+  background-color: #760900;
+}
+.ld-homework .nav ul li.bt-new a {
+  border-bottom: #a30c00 solid 5px;
+  background-color: #a30c00;
+}
+.ld-homework .nav ul li.bt-new :hover {
+  border-bottom: #760900 solid 5px;
+  background-color: #760900;
+}
+.ld-homework .nav ul li.bt-new .ld-icon-new {
+  margin-right: 10px;
+}
+
+.ld-homework .nav.status .btn-all a, .ld-homework .nav.status0 .bt-to-do a, .ld-homework .nav.status1 .bt-in-progress a, .ld-homework .nav.status2 .bt-complete a, .ld-homework .nav.status3 .btn-reviewed a {
+  border-bottom: #a30c00 solid 5px;
+}
+
+.ld-homework .nav.status .btn-all :hover, .ld-homework .nav.status0 .bt-to-do :hover, .ld-homework .nav.status1 .bt-in-progress :hover, .ld-homework .nav.status2 .bt-complete :hover, .ld-homework .nav.status3 .btn-reviewed :hover {
+  border-bottom: #760900 solid 5px;
+}
+.ld-homework .file-row {
+    display: block;
+    padding-bottom: 10px;
+}
+.ld-homework .file-row .one-drive-link img {
+  width: 40px;
+  margin-left: 20px;
+  vertical-align: top;
+}
+.ld-homework .add-file-list {
+  margin: 0;
+}
+.ld-homework .add-file-list div {
+  padding: 5px;
+  width: 100%;
+  float: left;
+}
+.ld-homework .add-file-list div:last-child {
+  margin-bottom: 5px;
+}
+.ld-homework .add-file-list h5 {
+  margin: 0;
+}
+.ld-homework .add-file-list h5:only-child {
+  display: none
+}
+.ld-homework .table .btn-submit-review {
+  display: inline-block
+}
+.ld-homework .table .btn-review-many {
+  display: inline-block;
+  margin-top: -5px;
+  background: none!important
+}
+.btn-review-item.inactive:focus,
+.btn-review-item-status.inactive:focus{
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+/* Feedback icons */
+.ld-homework form.feedback textarea {
+  margin: 5px 0;
+}
+.ld-homework .mark-group {
+  display: inline-block;
+  cursor: pointer;
+}
+.ld-homework .mark-groups .popover .mark-option:nth-child(n+2) {
+    display: inline;
+}
+.ld-homework .mark-groups .mark-option:nth-child(n+2) {
+  display: none;
+}
+.ld-homework td .mark-option {
+  padding: 0 2px;
+}
+.ld-homework .mark-option svg {
+  width: 20px;
+  height: 20px;
+}
+.ld-homework .mark-option svg text {
+  cursor: default;
+}
+.ld-homework .mark-groups .mark-group .mark-option svg * {
+  fill: #939598;
+}
+.ld-homework .popover .mark-option {
+  padding: 5px;
+  cursor: pointer;
+}
+.ld-homework .feedback-label {
+  vertical-align: top;
+  display: block;
+}
+.ld-homework .feedback-mark {
+  padding: 5px;
+  min-height: 30px;
+  display: inline-block;
+}
+.ld-homework .feedback-mark .mark-option svg {
+  width: 50px;
+  height: 50px;
+}
+.ld-homework .homework-view-feedback .feedback-mark, .ld-homework .homework-view .feedback-title, .ld-homework .homework-view .feedback-text {
+  padding: 5px;
+  border: none;
+}
+.ld-homework .homework-view .feedback-text  {
+  white-space: pre-line;
+}
+.ld-homework .feedback-mark svg {
+  border: 1px solid;
+  border-radius: 20%;
+  padding: 5px;
+}
+.ld-homework .feedback-mark .remove-feedback-mark {
+  float: right;
+  color: #bcbec0;
+  cursor: pointer;
+}
+.ld-homework .homework-view-feedback:first-child {
+  display: block !important; /* always show first feedback is message if no feedback exists*/
+}
+.ld-homework .table th[colspan="2"], .ld-homework .table th[colspan="7"] {
+  text-align: center;
+}
+
+.ld-homework .table th[rowspan="2"] {
+  vertical-align: middle;
+}
+.ld-homework .table .btn-remove,
+.teacher .ld-homework .btn-edit,
+.teacher .ld-homework .btn-review,
+.ld-homework .table .btn-download {
+  display: block;
+  float: left;
+}
+.ld-homework .btn-download {
+  margin: 0 10px 0 5px;
+}
+.teacher .ld-homework .table .btn-icon {
+  display: inline-block;
+  float: none;
+}
+.ld-homework .table .tooltip-inner {
+  margin-right: 5px;
+}
+
+.table .collapse td, .table .collapsing td, .table .in td {
+  border-top: none;
+  padding: 10px 50px 10px 20px;
+}
+.ld-homework .table .collapse-toggle {
+  cursor: pointer;
+}
+
+.ld-homework .table .collapse-toggle span.collapse-icon {
+  margin: 13px 0px 0 20px;
+  color: #414042;
+}
+
+.ld-student-status a {
+  display: block;
+  padding: 3px;
+  width: 25px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+.ld-homework .bt-new .ld-icon-new {
+  color: white;
+}
+.format-date.overdue:before {
+  font-family: FontAwesome;
+  content: "\f071";
+  margin-right: 5px;
+}
+.format-date.overdue {
+  color: #DC3B42;
+}
+/* homework header */
+.ld-homework .header-link.ld-new-buttons {
+  float: right;
+}
+/* homework table teacher */
+.ld-homework table.fixed {
+  table-layout: fixed;
+}
+.ld-homework table.fixed th:first-child, .ld-homework table.fixed td:first-child {
+  width: 30%;
+}
+.ld-homework table.fixed th:last-child, .ld-homework table.fixed td:last-child {
+  width: 8%;
+}
+
+.ld-new-buttons span {
+  margin: 0;
+}
+/* homework table teacher */
+.ld-homework table tr td {
+  padding: 15px 10px
+}
+
+.table-teacher-review-submit  {
+  width: 100%;
+}
+.ld-homework .table-teacher-review-submit td  {
+  border-top: none;
+  padding: 0;
+  vertical-align: middle;
+}
+.ld-homework .table-teacher-review-submit td .h5  {
+  margin-bottom: 0!important;
+}
+.table-teacher-homework .time-close,
+.table-teacher-homework .ld-CheckClass  {
+  margin-top: 10px;
+}
+
+
+/* homework item page */
+.ld-homework .date-stamp {
+  float: right;
+  text-align: center;
+}
+.ld-homework h3 .overdue {
+  color: #e00;
+}
+.ld-homework .viewing-mode {
+  text-align: center;
+  padding: 12px 0 0;
+}
+.ld-homework .text {
+  white-space: pre-wrap;
+}
+/* homework week grouping */
+.ld-homework .week-view tbody tr {
+  color: #bbb;
+}
+.ld-homework .week-view tbody tr td {
+  color: #4d4d4f;
+}
+.ld-homework .week-view tbody tr.overdue {
+  color: #b22;
+}
+.ld-homework .week-view .in-progress .btn-icon, .ld-homework .week-view .not-started .btn-icon, .ld-homework .week-view .reviewed .btn-icon, .ld-homework .week-view .overdue, .ld-homework .week-view .reviewed .btn-icon {
+  background-color: #fff;
+}
+.ld-homework .week-view .in-progress .btn-icon:before, .ld-homework .week-view .not-started .btn-icon:before, .ld-homework .week-view .reviewed .btn-icon:before {
+  color: #bbb;
+}
+.ld-homework .week-view .overdue .btn-icon:before {
+  color: #b22;
+}
+.ld-homework .week-view tbody tr.to-review {
+  color: #333;
+}
+.ld-homework .week-view tbody tr.week-group, .ld-homework tr.week-group th {
+  color: #4D4D4F;
+  background-color: #FFFFFF!important;
+  border-top: 1px solid #ddd!important;
+}
+.ld-homework tr.week-group:hover td {
+  background-color: #FFFFFF;
+}
+.ld-homework .week-view tbody tr.week-group .format-date[data-date-special="week-begins"] {
+  font-weight: 700;
+}
+/* new homework table headers */
+.ld-homework tr.headers {
+  font-weight: 700;
+  background: #fff;
+}
+.ld-homework tr.headers td {
+  padding: 10px 10px;
+}
+.ld-homework tr.headers:hover td, .ld-homework tr.headers:focus td {
+  background-color: #fff;
+}
+.homework-description {
+  height: 150px;
+}
+.ld-homework .ld-card {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+.ld-homework .view-manager.grid .ld-card, #homework .view-manager.grid .ld-card {
+  display: inline-block;
+  padding: 5px;
+  height: 200px !important;
+  background-color: #fff;
+}
+.ld-homework .view-manager.grid .ld-card-border, #homework .view-manager.grid .ld-card-border {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top: medium none;
+  padding: 10px 50px 10px 20px;
+}
+.ld-homework .ld-card-border.ld-card-feedback  {
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.35);
+  background-image: url("../img/stamp-feedback.png");
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.ld-homework .ld-card-border.ld-card-feedback .description-text  {
+  color: #f7941d;
+  font-size: 16px;
+  font-weight: 600;
+}
+.ld-homework .ld-card-border.ld-card-feedback .homework-title {
+  margin-top: 10px;
+}
+
+.ld-homework  .view-manager.grid, .ld-homework .view-manager.list {
+  border: none;
+}
+
+.ld-homework .ld-card-border svg {
+  float: left;
+  height: 25px;
+  margin-left: -5px;
+  margin-right: 10px;
+  width: 25px;
+}
+.ld-homework .text-cell svg{
+  width: 30px;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+}
+
+
+/* search/filter controls */
+#homeworkSearch .filter .resource-type {
+  margin: 0 5px;
+  display: inline-block;
+  padding: 2px 10px 2px 5px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+#homeworkSearch .resource-type .fa-caret-right {
+  font-size: 20px;
+  padding: 0 0px 0 2px;
+}
+#homeworkSearch ul {
+  margin: 0;
+}
+.ld-homework .ld-clear-search {
+  cursor: pointer;
+}
+#homeworkSearch .container-cell {
+  height: 50px;
+  padding: 0 10px;
+}
+#homeworkSearch .search-status-box {
+  left: 0;
+  top: -20px;
+  display: inline-block;
+  vertical-align: top;
+}
+/* Grid View */
+div.table {
+  background-color: #FFFFFF;
+  border: none;
+}
+.ld-inline-block {
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+.homework-duedate, .homework-action {
+  position: absolute;
+  bottom: 3%;
+}
+.homework-action {
+  right: 2%;
+}
+
+/* List and List Group */
+.ld-homework-listgrouped .ld-legend-title, .ld-homework-list .ld-legend-title {
+  font-size: 12px;
+  color: #4d4d4f;
+  display: block;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.ld-homework-list div {
+  display: inline-block;
+  text-align: center;
+  width: 21.5%;
+  float: none;
+}
+.ld-homework-list .homework-overdue-dates  {
+    width: 43%;
+}
+.ld-homework-list .homework-overdue-dates .homework-overdue  {
+    width: 49%;
+}
+.ld-homework-list .homework-title {
+  text-align: left;
+}
+
+.ld-homework-list .ld-CheckClass  {
+  width: 20px;
+}
+.ld-homework-list .ld-teacher-action  {
+  width: 40px;
+}
+
+/* Read More - Student Homework pages - Show*/
+div.readmore {
+  height: 110px;
+  margin-bottom: 20px;
+}
+div.readmore.opened	{
+  height: auto;
+}
+div.readmore .toggle .readclose,
+div.readmore.opened .toggle .readopen	{
+  display: none;
+}
+div.readmore .toggle .opened,
+div.readmore.opened .toggle .readclose	{
+  display: inline-block;
+}
+div.readmore .toggle  {
+  display: block!important;
+}
+/* Homework Info text*/
+.readmore-homework-info-text  {
+  white-space: pre-line;
+}
+
+/* Student Table */
+.table tbody > tr > td.td-collapse .in,
+.table tbody > tr > td.td-collapse .collapsing {
+  background-color: #fff;
+}
+
+.table tbody > tr > td.td-collapse,
+.table.table-hover tbody > tr > td.td-collapse {
+  padding: 0;
+  border: none;
+}
+.table tbody > tr > td .text-cell {
+  display: block;
+  height: 60px;
+  padding: 20px 0 0 20px;
+}
+/* Legend */
+.ld-legend {
+  display: none;
+}
+.ld-homework #due-times label:first-child {
+  display: block;
+}
+.ld-homework #due-times label:nth-child(n+1) {
+  padding: 0 5px;
+}
+/* Review Many */
+.ld-homework .review-many .action-box {
+  padding: 0 10px 20px;
+}
+.ld-homework .btn-review-many {
+  margin: 0px 20px 0;
+}
+/* Table Container*/
+.container-row.container-row-setDate  {
+  background-color: #eaebec ;
+}
+.ld-homework .container-cell {
+  height: 70px;
+}
+.container-cell .ld-legend-title  {
+  display: block;
+}
+.container-action {
+  text-align:right;
+  width: 30%;
+}
+.button-action,
+.button-action-one  {
+  width: calc(100% / 4);
+  display: inline-block;
+  vertical-align: middle;
+  text-align:center;
+  margin-left: -4px;
+}
+.container-row-setDate .button-action-one  {
+  width: calc(100% / 4);
+}
+.button-action-one  {
+  width: 100%;
+}
+
+/* Table container - list group*/
+.container-table  {
+  padding: 10px;
+}
+.container-table.week-view .container-action {
+  width: 50%;
+}
+
+.container-row.week-group  {
+  border: none!important;
+  background-color: #fff;
+}
+.container-row.week-group:hover  {
+  background-color: #fff;
+}
+.container-row.week-group .container-cell  {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.container-row.week-group .container-cell.collapse-icon-close{
+  border-bottom: 1px solid #dddddd;
+}
+.container-table.week-view .container-row {
+  border: 1px solid #ddd;
+}
+
+.container-table.week-view.collapse {
+  display: none;
+}
+.container-table.week-view.in, .container-table.week-view.collapsing {
+  display: block;
+  padding: 0;
+  margin-bottom: 30px;
+}
+.container-table.week-view.in .container-row, .container-table.week-view.collapsing .container-row  {
+  display: table;
+  width: 100%;
+}
+
+@media only screen and (min-width: 319px) and (max-width: 767px) {
+  .ld-homework-listgrouped .ld-legend-title, .ld-homework-list .ld-legend-title {
+    display: none;
+  }
+  .ld-homework-listgrouped, .ld-homework-list {
+    position: relative;
+  }
+  .ld-homework-listgrouped .ld-new-buttons, .ld-homework-list .ld-teacher-action {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    display: inline;
+    width: auto;
+  }
+  .ld-homework-listgrouped div {
+    display: inline-block;
+  }
+  .ld-homework-list .homework-title {
+    width: 35%;
+  }
+  .ld-homework-list .homework-title:nth-child(3) {
+    width: 45%;
+  }
+ .ld-homework-list .homework-overdue-dates  {
+    display: block;
+    width: auto;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+  .ld-homework .nav ul {
+    position: relative;
+    margin-bottom: 120px;
+  }
+  .ld-homework .nav ul li a {
+    width: 33.33%;
+    font-size: 16px;
+  }
+  .ld-homework .nav ul li.bt-new a {
+    position: absolute;e
+    top: 60px;
+    left: 10px;
+    text-align: left;
+  }
+  .ld-homework .nav ul li.bt-new a, .ld-homework .nav ul li.bt-new a .ld-icon-new {
+    color: #f7941d;
+    background: none;
+    border: none;
+  }
+  .ld-homework .nav ul li.bt-new a:hover {
+    background: none;
+    border-bottom: none;
+  }
+  .view-grid-list {
+    display: none;
+  }
+  .homework-duedate, .homework-action {
+    bottom: 50%;
+    margin-bottom: -10px;
+  }
+  /* Legend */
+  .ld-legend {
+    display: block;
+  }
+  .ld-legend li {
+    font-size: 12px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  /* Filter warning */
+  #homeworkSearch .overdue-count.active .icon-sign  {
+    font-size: 16px;
+  }
+  #homeworkSearch .overdue-count .icon-sign {
+    font-size: 22px;
+  }
+  #homeworkSearch .filter .resource-type {
+    padding: 0;
+  }
+  /* search */
+  #homeworkSearch .search-status-box {
+    top: 0px;
+  }
+  .ld-homework .table-teacher-review-submit td.name,
+  .ld-homework .table-teacher-review-submit td.review-label  {
+    padding-left: 5px;
+    width: auto;
+  }
+  .ld-homework .title-status {
+    width: calc(100% - 65px);
+  }
+
+  .ld-homework .container-cell {
+    height: 25px;
+    min-height: 25px;
+  }
+
+
+  /*Homework*/
+  .container-row, .container-cell {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .container-cell {
+    margin: 0;
+    padding: 0;
+  }
+  .container-table.week-view .container-cell {
+    height: 60px;
+    padding: 10px;
+  }
+  .container-table.week-view .container-cell.large {
+    height: 85px;
+  }
+  .container-table.week-view .ld-legend-title {
+    display: block;
+  }
+  .container-action, .container-table.week-view .container-action {
+    width:100%;
+    height: 35px;
+    text-align:center;
+    padding: 10px 0 5px;
+    margin-top: 5px;
+    border-top: solid 1px #ddd!important;
+  }
+  .container-table.week-view .container-action {
+    height: 45px;
+  }
+  .container-cell.container-title {
+    margin-bottom: 5px;
+  }
+  .container-cell .ld-legend-title {
+    display: inline-block;
+  }
+  .container-table.week-view .container-row,
+  .container-table.week-view .container-row:nth-child(2) .container-cell {
+    border: none;
+  }
+  .container-row.week-group .container-cell {
+    font-size: 14px;
+    padding: 20px 0 0;
+  }
+  .ld-homework.list-items .feedback-block {
+      margin-left: 0;
+      vertical-align: middle;
+  }
+  .ld-homework .mark-option svg {
+    height: 15px;
+    width: 15px;
+  }
+  .ld-homework.list-items .h5 {
+    font-size: 14px;
+  }
+  .ld-homework.list-items .title .h5 span, .ld-homework.list-items .completed {
+    display: none!important;
+  }
+  .ld-homework .feedback-mark .mark-option svg {
+    width: 30px;
+    height: 30px;
+    padding: 4px 4px 3px;
+  }
+
+}
+
+
+@media (min-width: 768px) {
+  .homework-description {
+    height: 150px;
+  }
+  .homework-duedate, .homework-action {
+    bottom: 6%;
+  }
+}
+@media (min-width: 1200px) {
+  .homework-description {
+    height: 150px;
+  }
+  .homework-duedate, .homework-action {
+    bottom: 6%;
+  }
+}

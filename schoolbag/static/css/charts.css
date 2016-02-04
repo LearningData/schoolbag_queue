@@ -1,0 +1,50 @@
+.ld-chart .axis path, .ld-chart .grid-line, .ld-chart .axis .tick line {
+  stroke: #e6e7e8;
+  fill: none;
+  shape-rendering: crispEdges;
+
+}
+.ld-chart .axis text, .ld-chart .day-label {
+  fill: #4d4d4f;
+}
+.ld-chart .average {
+  stroke: #4d4d4f;/*#939598;*/
+  stroke-dasharray: 5,1;
+}
+.ld-stats-modal .modal-dialog {
+  width: 80%;
+}
+.ld-stats-modal .modal-body {
+  padding: 0;
+}
+.ld-stats-modal .modal-footer {
+  padding: 15px;
+  margin: 0;
+}
+.stats.display-window {
+  max-height: 450px;
+  display: block;
+  overflow: auto;
+  margin-bottom: 0;
+}
+.stats.display-window li {
+  height: 40px;
+  padding: 10px;
+  padding-bottom: 30px;
+  border-top: solid 1px #dedede;
+}
+.stats.display-window li:first-child {
+  border: none;
+}
+
+
+@media only screen and (min-width: 319px) and (max-width: 767px) {
+  .stats.display-window li {
+    height: auto;
+    padding: 10px 0;
+    overflow: hidden;
+  }
+  .modal-title  {
+    font-size: 16px;
+  }
+}

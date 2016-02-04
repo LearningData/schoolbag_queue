@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<div class="dashboard">
+  <ul>
+    {% if configs.module.timetable %}
+    <li id="dashboard-timetable-box" class="ld-box ld-timetable red hidden">
+        <div class="ld-box-head">
+            <div class="dashboard-head" data-panel-type="timetable">
+                <h2><span class="ld-icon-timetable"></span>{% trans "timetable" %}</h2>
+            </div>
+        </div>
+        <div class="ld-box-child">
+            <div id="dashboard-timetable-contents">
+                <div class="header-navigation">
+                    <a title="Prev" class="default-prev"><span class="fa fa-chevron-circle-left"></span></a>
+                    <a title="Next" class="default-next"><span class="fa fa-chevron-circle-right"></span></a>
+                    <h3></h3>
+                </div>
+                <div class="no-content hidden no-timetable">
+                  <div class="ld-icon-backpack large"></div>
+                  <h4 class="sentence">{% trans "school-timetable-not-created" %}</h4>
+                  {% if user.isAdmin %}
+                  <a href="school/index#timetable-form" class="action">
+                    {% trans "build-your-timetable-now" %}
+                  </a>
+                  {% elif user.is_teacher %}
+                  <h4 class="h4">{% trans "teacher-contact-admin-for-timetable" %}</h4>
+                  {% else %}
+                  <h4 class="h4">{% trans "student-contact-admin-for-timetable" %}</h4>
+                  {% endif %}
+                </div>
+                <div class="table none hidden empty-timetable">
+                    {% if user.is_teacher %}
+                        {% trans "you-have-classes" %} <a href="teacher/classes" class="color action">{% trans "add-them-to-timetable" %}</a>
+                    {% else %}
+                        {% trans "student-contact-admin-for-timetable" %}
+                    {% endif %}
+                </div>
+                <div class="table none hidden no-classes">
+                    {% trans "no-classes-set" %}
+                    {% if user.is_teacher %}
+                      <a href="teacher/newClass" class="color action">
+                        {% trans "create-join-class-now" %}
+                      </a>
+                    {% else %}
+                        <a href="student/classes" class="color action">{% trans "join-class-now" %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endif %}
+
+    {% if configs.module.homework %}
+    <li id="dashboard-homework-box" class="ld-box ld-homework orange hidden">
+      <div class="ld-box-head">
+        <div class="dashboard-head" data-panel-type="homework">
+          <h2><span class="ld-icon-homework"></span>{% trans "homework" %}</h2>
+        </div>
+      </div>
+      <div class="ld-box-child">
+        <div id="dashboard-homework-contents">
+          <div class="no-content hidden no-homework">
+            <div class="ld-icon-backpack large"></div>
+              {% if user.is_teacher %}
+              <h4 class="sentence">{% trans "no-homework-due-today" %}</h4>
+              <a href="teacher/homework" class="action">
+              {% else %}
+              <h4 class="sentence">{% trans "no-homework-outstanding" %}</h3>
+              <a href="student/homework" class="action">
+              {% endif %}
+              {% trans "view-all-homework" %}
+              </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% endif %}
+
+    {% if configs.module.calendar %}
+    <li id="dashboard-events-box" class="ld-box ld-events purple hidden">
+        <div class="ld-box-head">
+            <div class="dashboard-head" data-panel-type="calendar"></div>
+        </div>
+        <div class="ld-box-child">
+            <div id="dashboard-events"></div>
+        </div>
+    </li>
+    {% endif %}
+
+    {% if configs.module.messages %}
+    <li id="dashboard-messages-box" class="ld-box messages green hidden">
+        <div class="ld-box-head">
+            <div class="dashboard-head" data-panel-type="messages">
+                <h2><span class="fa fa-envelope"></span>{% trans "messages" %}</h2>
+            </div>
+        </div>
+        <div class="ld-box-child">
+            <div id="dashboard-messages-contents"></div>
+        </div>
+    </li>
+    {% endif %}
+
+    {% if configs.module.notices %}
+    <li id="dashboard-notices-box" class="ld-box ld-notices cerulean hidden">
+        <div class="ld-box-head">
+            <div class="dashboard-head" data-panel-type="noticeboard">
+                <h2><span class="ld-icon-notices"></span>{% trans "notices" %}</h2>
+            </div>
+        </div>
+        <div class="ld-box-child">
+            <div id="dashboard-notices">
+              <div class="no-content no-notices hidden">
+                <div class="ld-icon-backpack large"></div>
+                <h4 class="sentence">{% trans "no-notices" %}</h4>
+            </div>
+        </div>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+
+{% endblock %}

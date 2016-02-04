@@ -1,0 +1,44 @@
+.blue header, .blue .btn-icon, .blue .btn, .blue.ld-box .ld-box-head .title, .blue .tooltip-inner,
+.blue.ld-timetable .header-navigation, .blue .uploader .action, .blue div.ld-CheckClass span.checked,
+.blue div.ld-CheckClass.hover span.checked, .blue div.ld-RadioClass span.checked,
+.blue div.ld-RadioClass.hover span.checked, .blue .nav ul li a, .blue .ld-checkbox input:checked + .display,
+.blue .ld-tag.subject, .blue .view-grid-list button, .blue .selectedResourcePreview-resourceCount {
+  background-color: #2e3192;
+}
+.blue .nav ul li a.inactive {
+  background-color: #8781bd;
+}
+.blue a, .blue a:hover, .blue a:focus, .blue .no-content .action, .blue.ld-resources .btn-sign, .blue .btn-delete, .blue .btn-flat, .blue .btn-flat .fa,
+.blue .ld-icon-new, .blue h3.area-name, .blue .ld-checkbox input:checked + .display:before,
+.blue.ld-resources .filter .resource-type, .ld-new-buttons, .blue .ld-control-filters, .blue .color {
+  color: #2e3192;
+}
+.blue.btn-icon:hover, .blue .btn:hover {
+  background-color: #2e3192;
+}
+.blue .form-control:focus, .blue input:focus, .blue textarea:focus {
+  border-color: #2e3192;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46, 49, 146 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46, 49, 146, 0.6);
+}
+.blue .modal-resources .select .preview, .blue .modal-title, .blue div.ld-CheckClass span,
+.blue div.ld-CheckClass.hover span, .blue div.ld-RadioClass span, .blue div.ld-RadioClass.hover span,
+.blue .ld-checkbox input + .display, .blue .checkall .ld-CheckClass {
+  border-color: #2e3192;
+}
+.blue .ld-tabs.nav ul li.active a {
+  border-bottom-color: #0e001a;
+}
+.blue .tooltip.top .tooltip-arrow {
+  border-top-color: #2e3192;
+}
+.tooltip.left .tooltip-arrow{
+  border-left-color: #2e3192;
+}
+.tooltip.right .tooltip-arrow{
+  border-right-color: #2e3192;
+}
+.tooltip.bottom .tooltip-arrow{
+  border-bottom-color: #2e3192;
+}

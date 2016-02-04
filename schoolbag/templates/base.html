@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load i18n %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="SchoolBag"/>
+    <meta name="msapplication-TileImage" content="img/icons/ms-school.png"/>
+    <link rel="shortcut icon" href="/schoolbag/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/schoolbag/img/icons/touch-icon-iphone.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/schoolbag/img/icons/touch-icon-ipad.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/schoolbag/img/icons/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/schoolbag/img/icons/touch-icon-ipad-retina.png">
+    <title>{% trans "title" %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/libs/ld-icon.css' %}" />
+
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/libs/summernote.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/dashboard.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/orange.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/red.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/cerulean.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/grey.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/purple.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/green.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/blue.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/pink.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/homework.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/timetable.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/notices.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/classes.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/calendar.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/resources.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/policies.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/schoolInfo.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/topicline.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/guardian.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/app.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/libs/fullcalendar.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/libs/jquery.timepicker.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/media.css' %}" />
+    <link rel="stylesheet"
+      type="text/css" href="{% static 'css/charts.css' %}" />
+  </head>
+  <body class="teacher" data-lang="en" data-uid="138">
+  <input type="hidden" name="baseUrl" value="">
+    <div class="sidebar">
+        <div class="sidebar-scroll">
+            {% include "partials/header.html" %}
+            {% include "partials/sidebar.html" %}
+        </div>
+    </div>
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+    <script type="text/javascript" src="{% static 'js/libs/jquery-1.9.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/libs/d3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/libs/bootstrap.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/jquery-ui-1.10.4.custom.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/moment-with-langs.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/moment-timezone-with-data.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/moment-duration-format.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/jquery.uniform.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/jquery.slimscroll.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/jquery.dotdotdot.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/jquery-ui-i18n.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/modernizr.custom.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/libs/jquery.dataTables.min.js' %}"></script>
+    <script type="text/javascript"
+      src="{% static 'js/translate.en.js' %}"></script>
+    {% block js %}{% endblock %}
+    <script type="text/javascript" src="{% static 'js/libs/mustache.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/dashboard.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/timetable.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/homework.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/topicLine.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/notices.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/resources.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mimeTypes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/policies.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/application.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/resourceFunctions.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/classesResources.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/classes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/guardian.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/libs/modernizr.custom.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/schoolInfo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
+  </body>
+</html>
