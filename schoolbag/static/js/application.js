@@ -241,10 +241,9 @@ function updateFormDate(date, datePicker){
     formatDate(element[0])
 }
 
-// var urlBase = window.location.protocol + "//" + window.location.host
-// urlBase += $('input[type="hidden"][name="baseUrl"]').val() || ""
-// $("input[type=file]:not([class='hidden'])").uniform();
-var urlBase = "http://localhost:7002/schoolbag/";
+var urlBase = window.location.protocol + "//" + window.location.host
+urlBase += $('input[type="hidden"][name="baseUrl"]').val() || ""
+$("input[type=file]:not([class='hidden'])").uniform();
 
 function init() {
     $(".format-date").each(function(index, element) {
