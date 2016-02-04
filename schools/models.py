@@ -1,5 +1,7 @@
 from django.db import models
+from django.conf import settings
 
+from datetime import date
 import base64
 import os
 
@@ -53,6 +55,29 @@ class Config(models.Model):
         db_column="schoolId",
         on_delete=models.CASCADE,
     )
+
+    @staticmethod
+    def get_year(school_id):
+        config = Config.objects.filter(
+            name="schoolYear", school_id=school_id).order_by("-value").first()
+
+        if config:
+            return int(config.value)
+
+        if date.today().month >= Config.cut_off_month(school_id):
+            return date.today().year + 1
+
+        return date.today().year
+
+    @staticmethod
+    def cut_off_month(school_id):
+        config = Config.objects.filter(
+            name="cutOffMonth", school_id=school_id).first()
+
+        if config:
+            return int(config.value)
+
+        return settings.YEAR_CUT_OFF_MONTH
 
     class Meta:
         managed = False
@@ -166,6 +191,15 @@ class Noticeboard(models.Model):
         db_column="classID",
         on_delete=models.CASCADE,
     )
+
+    def to_dict(self):
+        return {
+            "id": self.pk,
+            "text": self.text,
+            "date": self.date,
+            "title": self.title,
+            "category": self.category,
+        }
 
     class Meta:
         managed = False
@@ -463,6 +497,12 @@ class User(models.Model):
         on_delete=models.CASCADE,
     )
 
+    classes = models.ManyToManyField(
+        "lessons.ClassList",
+        through="lessons.ClassListOfUsers",
+        through_fields=("student", "class_list"),
+        related_name="classes")
+
     name = models.CharField(db_column='FirstName', max_length=35)
     last_name = models.CharField(db_column='LastName', max_length=35)
     type = models.CharField(db_column='Type', max_length=1)
@@ -496,6 +536,14 @@ class User(models.Model):
             return file_path
 
         return "media/{}".format(self.photo.name)
+
+    def get_classes(self):
+        if self.is_teacher():
+            return self.classlist_set.filter(cohort__year=2015)
+
+        if self.is_student():
+            return self.classes.filter(
+                class_list__cohort__year=2015)
 
     def __str__(self):
         return self.full_name()
