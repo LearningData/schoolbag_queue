@@ -101,7 +101,7 @@ class Event(models.Model):
     location = models.CharField(max_length=200, blank=True, null=True)
     contact = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    all_day = models.IntegerField(db_column='allDay', blank=True, null=True)
+    all_day = models.IntegerField(db_column='allDay', blank=True, null=True, default=False)
     created_at = models.DateTimeField(db_column='createdAt')
     link = models.CharField(max_length=200, blank=True, null=True)
 
@@ -110,6 +110,19 @@ class Event(models.Model):
         db_column="userId",
         on_delete=models.CASCADE,
     )
+
+    def to_dict(self):
+        return {
+            "title": self.title,
+            "start_date": self.start_date,
+            "end_date": self.end_date,
+            "location": self.location,
+            "contact": self.contact,
+            "description": self.description,
+            "all_day": self.all_day,
+            "created_at": self.created_at,
+            "link": self.link,
+        }
 
     class Meta:
         managed = False
