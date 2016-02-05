@@ -34,21 +34,21 @@ class IndexView(TemplateView):
 
 
 def classes(request):
-    classes = ClassList.objects.filter(
-        teacher_id=4587, cohort__year=2015, school_id=101)
+    # PAUL: 4598
+    # WALSH: 4587
+    user = User.objects.get(pk=4598)
 
     json = []
-    for class_list in classes:
+    for class_list in user.get_classes():
         json.append({"id": class_list.pk, "subject": class_list.subject.name})
 
     return JsonResponse({"classes": json})
 
 def notices(request):
-    user = User.objects.get(pk=4587)
-    notices = Noticeboard.objects.filter(
-        user_id=user.pk, school_id=0, expiry_date__lte=date.today())
+    user = User.objects.get(pk=4598)
+    notices = Noticeboard.all_notices(user)
 
-    notices_arr = [n.to_dict() for n in notices]
+    notices_arr = [notice.to_dict() for notice in notices]
 
     for notice in user.noticeboard_set.all():
         notices_arr.append(notice.to_dict())
