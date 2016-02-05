@@ -1,7 +1,9 @@
 from django.db import models
 from django.conf import settings
+from django.db.models import Q
 
 from datetime import date
+from itertools import chain
 import base64
 import os
 
@@ -191,6 +193,27 @@ class Noticeboard(models.Model):
         db_column="classID",
         on_delete=models.CASCADE,
     )
+
+    @staticmethod
+    def all_notices(user):
+        today = date.today()
+        classes_ids = user.get_classes().values_list('pk', flat=True)
+
+        if user.is_teacher():
+            classes_query = Q(class_list_id__in=classes_ids)
+        else:
+            classes_query = Q(user_type__in=['A', 'P'],
+                class_list_id__in=classes_ids)
+
+        school_query = Q(school_id=user.school_id, user_type='A')
+        schoolbag_query = Q(user_id=user.pk, school_id=0)
+
+        notices = Noticeboard.objects.filter(
+            classes_query | school_query | schoolbag_query,
+            date__lte=today,
+            expiry_date__gte=today).order_by('-date')
+
+        return notices
 
     def to_dict(self):
         return {
@@ -500,8 +523,7 @@ class User(models.Model):
     classes = models.ManyToManyField(
         "lessons.ClassList",
         through="lessons.ClassListOfUsers",
-        through_fields=("student", "class_list"),
-        related_name="classes")
+        through_fields=("student", "class_list"))
 
     name = models.CharField(db_column='FirstName', max_length=35)
     last_name = models.CharField(db_column='LastName', max_length=35)
@@ -542,8 +564,7 @@ class User(models.Model):
             return self.classlist_set.filter(cohort__year=2015)
 
         if self.is_student():
-            return self.classes.filter(
-                class_list__cohort__year=2015)
+            return self.classes.filter(cohort__year=2015)
 
     def __str__(self):
         return self.full_name()
