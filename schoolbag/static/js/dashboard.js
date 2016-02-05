@@ -188,9 +188,9 @@ var dashboard = (function() {
         var url = urlBase + "service/calendar/"
         $.get( url, function(response ) {
             response.sort(function(a, b) {
-                if (moment(a["start"]).isBefore(moment(b["start"]), 'day'))
+                if (moment(a["start_date"]).isBefore(moment(b["start_date"]), 'day'))
                     return -1
-                if (moment(a["start"]).isAfter(moment(b["start"]), 'day'))
+                if (moment(a["start_date"]).isAfter(moment(b["start_date"]), 'day'))
                     return 1
                 return 0
             })
