@@ -1,5 +1,13 @@
 import pytest
-from schools.models import User, School
+from datetime import date
+from schools.models import User, School, Config
+
+
+class TestSchool:
+    def test_school_repr(self):
+        school = School(name="School Name")
+        assert str(school) == school.name
+
 
 class TestUser:
     @pytest.fixture
@@ -32,8 +40,3 @@ class TestUser:
     def test_is_guardian_returns_true(self, user):
         user.type = "G"
         assert user.is_guardian() == True
-
-class TestSchool:
-    def test_school_repr(self):
-        school = School(name="School Name")
-        assert str(school) == school.name
