@@ -55,3 +55,8 @@ def notices(request):
 
     return JsonResponse(
         {"status": "success", "notices": notices_arr})
+
+def calendar(request):
+    user = User.objects.get(pk=4598)
+    return JsonResponse(
+        [event.to_dict() for event in user.event_set.all()], safe=False)
