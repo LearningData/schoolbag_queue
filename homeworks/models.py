@@ -57,6 +57,7 @@ class Homework(models.Model):
         managed = False
         db_table = 'homework'
 
+
 class HomeworkFiles(models.Model):
     name = models.CharField(max_length=100)
     original_name = models.CharField(db_column='originalName', max_length=100)
@@ -74,6 +75,7 @@ class HomeworkFiles(models.Model):
     class Meta:
         managed = False
         db_table = 'homework_files'
+
 
 class HomeworkFeedback(models.Model):
     text = models.TextField(blank=True, null=True)
@@ -184,10 +186,13 @@ class OneNoteLinks(models.Model):
     type = models.CharField(max_length=1)
     schoolbag_id = models.IntegerField(db_column='schoolbagId')
     url = models.CharField(max_length=600, blank=True, null=True)
-    onenote_id = models.CharField(db_column='oneNoteId', max_length=100, blank=True, null=True)
+    onenote_id = models.CharField(
+        db_column='oneNoteId', max_length=100, blank=True, null=True)
     content = models.TextField(db_column='pageContent', blank=True, null=True)
-    table = models.CharField(db_column='schoolbagTable', max_length=15, blank=True, null=True)
-    client_url = models.CharField(db_column='clientUrl', max_length=600, blank=True, null=True)
+    table = models.CharField(
+        db_column='schoolbagTable', max_length=15, blank=True, null=True)
+    client_url = models.CharField(
+        db_column='clientUrl', max_length=600, blank=True, null=True)
 
     user = models.ForeignKey(
         User,
