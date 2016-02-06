@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-06 15:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: accounts/templates/login.html:6 schoolbag/templates/partials/header.html:48
+msgid "support"
+msgstr "Support"
+
+#: accounts/templates/login.html:19
+msgid "making-digital-reality"
+msgstr "Making the digital school a reality"
+
+#: accounts/templates/login.html:42
+msgid "login"
+msgstr "Login"
+
+#: accounts/templates/login.html:45
+msgid "forgot-password"
+msgstr "Forgot Password"
+
+#: accounts/templates/login.html:51
+msgid "our-video-schoolbag"
+msgstr "Our video explains the benefits of Schoolbag."
+
+#: accounts/templates/login.html:54
+msgid "not-account"
+msgstr "Don't have an account?"
+
+#: accounts/templates/login.html:66
+msgid "privacy-policy"
+msgstr "Privacy Policy"
+
+#: accounts/templates/login.html:69
+msgid "contactus"
+msgstr "Contact Us"
+
+#: accounts/templates/partials/header-nologged.html:6
+#: schoolbag/templates/base.html:15
+msgid "title"
+msgstr "Title"
+
+#: dashboard/templates/index.html:11
+#: schoolbag/templates/partials/sidebar.html:32
+msgid "timetable"
+msgstr "Timetable"
+
+#: dashboard/templates/index.html:23
+msgid "school-timetable-not-created"
+msgstr "Your school's timetable has not been created yet."
+
+#: dashboard/templates/index.html:26
+msgid "build-your-timetable-now"
+msgstr ""
+
+#: dashboard/templates/index.html:29
+msgid "teacher-contact-admin-for-timetable"
+msgstr "Build your school's timetable now."
+
+#: dashboard/templates/index.html:31 dashboard/templates/index.html.py:38
+msgid "student-contact-admin-for-timetable"
+msgstr "Please ask your teacher to help get the timetable set up."
+
+#: dashboard/templates/index.html:36
+msgid "you-have-classes"
+msgstr "You have classes."
+
+#: dashboard/templates/index.html:36
+msgid "add-them-to-timetable"
+msgstr "Why not add them to your timetable."
+
+#: dashboard/templates/index.html:42
+msgid "no-classes-set"
+msgstr "You have no classes."
+
+#: dashboard/templates/index.html:45
+msgid "create-join-class-now"
+msgstr "Create or join a class now"
+
+#: dashboard/templates/index.html:48
+msgid "join-class-now"
+msgstr "Join class now"
+
+#: dashboard/templates/index.html:60
+#: schoolbag/templates/partials/sidebar.html:10
+msgid "homework"
+msgstr "Homework"
+
+#: dashboard/templates/index.html:68
+msgid "no-homework-due-today"
+msgstr "No homework is due to be handed in today."
+
+#: dashboard/templates/index.html:71
+msgid "no-homework-outstanding"
+msgstr "You have no homework outstanding."
+
+#: dashboard/templates/index.html:74
+msgid "view-all-homework"
+msgstr "View all homework."
+
+#: dashboard/templates/index.html:97
+#: schoolbag/templates/partials/sidebar.html:15
+msgid "messages"
+msgstr "Messages"
+
+#: dashboard/templates/index.html:110
+#: schoolbag/templates/partials/sidebar.html:20
+msgid "notices"
+msgstr "Notices"
+
+#: dashboard/templates/index.html:117
+msgid "no-notices"
+msgstr "There are no notices today."
+
+#: schoolbag/templates/partials/header.html:35
+msgid "profile"
+msgstr "Profile"
+
+#: schoolbag/templates/partials/header.html:40
+msgid "school-info"
+msgstr "School Info"
+
+#: schoolbag/templates/partials/header.html:44
+msgid "change-password"
+msgstr "Change Password"
+
+#: schoolbag/templates/partials/header.html:54
+msgid "logout"
+msgstr "Logout"
+
+#: schoolbag/templates/partials/sidebar.html:5
+#: schoolbag/templates/partials/sidebar.html:53
+msgid "dashboard"
+msgstr "Dashboard"
+
+#: schoolbag/templates/partials/sidebar.html:26
+msgid "events"
+msgstr "Events"
+
+#: schoolbag/templates/partials/sidebar.html:38
+msgid "classes"
+msgstr "Classes"
+
+#: schoolbag/templates/partials/sidebar.html:44
+msgid "resources"
+msgstr "Resources"
+
+#: schoolbag/templates/partials/sidebar.html:59
+msgid "policies"
+msgstr "Policies"

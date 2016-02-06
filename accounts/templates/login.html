@@ -1,0 +1,79 @@
+{% load i18n %}
+{% load static %}
+{% include "partials/header-nologged.html" %}
+  <body id="login">
+    <a class="ld-support show-to-desktop" href="http://www.learningdata.ie/contact" target="_blank">
+      {% trans "support" %}
+    </a>
+    <div id="wrapper">
+      <!-- Header -->
+      <header>
+        <img src="{% static 'img/logo.png' %}" width="228"
+          alt="Schoolbag" class="show-to-mobile">
+        <img src="{% static 'img/logo-login.png' %}" width="228"
+          alt="Schoolbag" class="show-to-desktop">
+        <h1 class="semibold">{% trans "making-digital-reality" %}</h1>
+      </header>
+
+      <!-- Sign In -->
+      <div class="signin">
+
+        <form action="session/login" method="POST">
+        <input type="hidden" name="next" value="{{ next }}">
+
+        <div class="logins">
+          <a href="login/azure">
+            <img src="{% static 'img/office-365.png' %}" align="School account" width="270">
+          </a>
+        </div>
+        <p class="fancy"><span>or</span></p>
+
+        <input name="email"
+          type="text", placeholder="Email", class="form-control" autofocus/>
+
+        <input type="password" name="password"
+          placeholder="Password" class="form-control password">
+        <input type="hidden" value="" name="csrf">
+        <input type="submit"
+          name="login", value="{% trans 'login' %}" class="btn btn-login">
+
+        <a href="password/forgotPassword" class="link-forgot">
+          {% trans 'forgot-password' %}</a>
+        </form>
+      </div>
+
+      <!-- Sign Up -->
+      <div class="signup">
+        <h3>{% trans "our-video-schoolbag" %}</h3>
+        <a class="ld-video" href="https://vimeo.com/91413043" target="_blank"><span class="fa fa-play-circle-o"></span>Watch the video</a>
+        <div class="btn btn-signup">
+          <span class="show-to-mobile">{% trans "not-account" %}</span>
+          <a class="btn-signup" href="/register"> Sign Up </a>
+        </div>
+        <hr class="show-to-mobile" />
+        <a class="ld-logo" href="http://www.learningdata.ie" target="_blank">
+          <img src="{% static 'img/logo-ld.png' %}"
+              alt="LearningData" class="show-to-mobile">
+          <img src="{% static 'img/logo-ldwhite.png' %}"
+              width="140" alt="LearningData" class="show-to-desktop">
+        </a>
+        <div class="signup-footer">
+          <a href="terms/privacy" class="ld-contact" target="_blank">
+            {% trans "privacy-policy" %}
+          </a>
+          <a  class="ld-contact"> | </a>
+          <a class="ld-contact" href="http://www.learningdata.ie/contact" target="_blank">{% trans "contactus" %}</a>
+        </div>
+      </div>
+    </div>
+    <div class="ld-dottedoverlay show-to-desktop"></div>
+    <div class="ld-overlay show-to-desktop"></div>
+    <ul class="cb-slideshow show-to-desktop">
+      <li><span>Image 01</span></li>
+      <li><span>Image 02</span></li>
+      <li><span>Image 03</span></li>
+      <li><span>Image 04</span></li>
+      <li><span>Image 05</span></li>
+      <li><span>Image 06</span></li>
+    </ul>
+{% include "partials/footer-nologged.html" %}

@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% trans "title" %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1;">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed"
+        href="{% static 'img/icons/touch-icon-iphone.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+        href="{% static 'img/icons/touch-icon-ipad.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="{% static 'img/icons/touch-icon-iphone-retina.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="{% static 'img/icons/touch-icon-ipad-retina.png' %}">
+    <meta name="application-name" content="SchoolBag"/>
+    <meta name="msapplication-TileImage"
+        content="{% static 'img/icons/ms-school.png' %}"/>
+  </head>
