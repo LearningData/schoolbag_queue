@@ -3,8 +3,6 @@ from django.conf import settings
 from django.db.models import Q
 
 from datetime import date
-from itertools import chain
-import base64
 import os
 
 
@@ -101,7 +99,8 @@ class Event(models.Model):
     location = models.CharField(max_length=200, blank=True, null=True)
     contact = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    all_day = models.IntegerField(db_column='allDay', blank=True, null=True, default=False)
+    all_day = models.IntegerField(
+        db_column='allDay', blank=True, null=True, default=False)
     created_at = models.DateTimeField(db_column='createdAt')
     link = models.CharField(max_length=200, blank=True, null=True)
 
@@ -130,8 +129,10 @@ class Event(models.Model):
 
 
 class FailedLogin(models.Model):
-    ip_address = models.CharField(db_column='ipAddress', max_length=15, blank=True, null=True)
-    user_agent = models.CharField(db_column='userAgent', max_length=300, blank=True, null=True)
+    ip_address = models.CharField(
+        db_column='ipAddress', max_length=15, blank=True, null=True)
+    user_agent = models.CharField(
+        db_column='userAgent', max_length=300, blank=True, null=True)
     date = models.DateTimeField(blank=True, null=True)
 
     user = models.ForeignKey(
@@ -167,7 +168,8 @@ class Group(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     year = models.IntegerField(blank=True, null=True)
     type = models.IntegerField(blank=True, null=True)
-    access_code = models.CharField(db_column='accessCode', max_length=8, blank=True, null=True)
+    access_code = models.CharField(
+        db_column='accessCode', max_length=8, blank=True, null=True)
 
     school = models.ForeignKey(
         'School',
@@ -183,11 +185,13 @@ class Group(models.Model):
 class Noticeboard(models.Model):
     date = models.DateTimeField()
     text = models.TextField()
-    user_type = models.CharField(db_column='userType', max_length=1)  # Field name made lowercase.
-    file_attached = models.CharField(db_column='fileAttached', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    user_type = models.CharField(db_column='userType', max_length=1)
+    file_attached = models.CharField(
+        db_column='fileAttached', max_length=100, blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
     category = models.CharField(max_length=50, blank=True, null=True)
-    expiry_date = models.DateTimeField(db_column='expiryDate', blank=True, null=True)
+    expiry_date = models.DateTimeField(
+        db_column='expiryDate', blank=True, null=True)
 
     school = models.ForeignKey(
         'School',
@@ -215,7 +219,8 @@ class Noticeboard(models.Model):
         if user.is_teacher():
             classes_query = Q(class_list_id__in=classes_ids)
         else:
-            classes_query = Q(user_type__in=['A', 'P'],
+            classes_query = Q(
+                user_type__in=['A', 'P'],
                 class_list_id__in=classes_ids)
 
         school_query = Q(school_id=user.school_id, user_type='A')
@@ -244,7 +249,7 @@ class Noticeboard(models.Model):
 
 class NoticeboardFiles(models.Model):
     name = models.CharField(max_length=100)
-    original_name = models.CharField(db_column='originalName', max_length=100)  # Field name made lowercase.
+    original_name = models.CharField(db_column='originalName', max_length=100)
     size = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=40, blank=True, null=True)
     file = models.CharField(max_length=1)
@@ -289,9 +294,11 @@ class Policy(models.Model):
     content = models.TextField(blank=True, null=True)
     sequence = models.IntegerField(blank=True, null=True)
     status = models.IntegerField(blank=True, null=True)
-    created_at = models.DateTimeField(db_column='createdAt', blank=True, null=True)
+    created_at = models.DateTimeField(
+        db_column='createdAt', blank=True, null=True)
     title = models.CharField(max_length=100)
-    begin_date = models.DateTimeField(db_column='beginDate', blank=True, null=True)
+    begin_date = models.DateTimeField(
+        db_column='beginDate', blank=True, null=True)
     end_date = models.DateTimeField(db_column='endDate', blank=True, null=True)
 
     school = models.ForeignKey(
@@ -309,6 +316,7 @@ class Policy(models.Model):
     class Meta:
         managed = False
         db_table = 'policies_pages'
+
 
 class PoliciesFiles(models.Model):
     resource_id = models.CharField(db_column='resourceId', max_length=100)
@@ -347,7 +355,8 @@ class PoliciesLog(models.Model):
 
 
 class RememberToken(models.Model):
-    created_at = models.DateTimeField(db_column='createdAt', blank=True, null=True)
+    created_at = models.DateTimeField(
+        db_column='createdAt', blank=True, null=True)
     token = models.CharField(max_length=300, blank=True, null=True)
 
     user = models.ForeignKey(
@@ -389,21 +398,27 @@ class School(models.Model):
     school_id = models.AutoField(db_column='schoolID', primary_key=True)
     name = models.CharField(db_column='SchoolName', max_length=35)
     address1 = models.CharField(db_column='Address1', max_length=100)
-    address2 = models.CharField(db_column='Address2', max_length=100, blank=True, null=True)
+    address2 = models.CharField(
+        db_column='Address2', max_length=100, blank=True, null=True)
     postcode = models.CharField(max_length=50, blank=True, null=True)
     country = models.CharField(max_length=50)
     phone = models.CharField(max_length=30, blank=True, null=True)
     email = models.CharField(max_length=100, blank=True, null=True)
-    head_teacher = models.IntegerField(db_column='headTeacher', blank=True, null=True)
-    access_code = models.CharField(db_column='AccessCode', max_length=8, blank=True, null=True)
-    teacher_accesscode = models.CharField(db_column='TeacherAccessCode', max_length=8, blank=True, null=True)
+    head_teacher = models.IntegerField(
+        db_column='headTeacher', blank=True, null=True)
+    access_code = models.CharField(
+        db_column='AccessCode', max_length=8, blank=True, null=True)
+    teacher_accesscode = models.CharField(
+        db_column='TeacherAccessCode', max_length=8, blank=True, null=True)
     allty = models.IntegerField(db_column='allTY', blank=True, null=True)
-    client_id = models.CharField(db_column='clientId', max_length=100, blank=True, null=True)
+    client_id = models.CharField(
+        db_column='clientId', max_length=100, blank=True, null=True)
     language = models.CharField(max_length=20, blank=True, null=True)
     created_at = models.DateField(db_column='createdAt', blank=True, null=True)
     timezone = models.CharField(max_length=50, blank=True, null=True)
     website = models.CharField(max_length=100, blank=True, null=True)
-    mission_statement = models.TextField(db_column='missionStatement', blank=True, null=True)
+    mission_statement = models.TextField(
+        db_column='missionStatement', blank=True, null=True)
 
     avatar = models.ForeignKey(
         'Avatar',
@@ -420,7 +435,8 @@ class School(models.Model):
 
 
 class SchoolVendor(models.Model):
-    vendorid = models.CharField(db_column='vendorId', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    vendor_id = models.CharField(
+        db_column='vendorId', max_length=30, blank=True, null=True)
     config = models.TextField()
 
     school = models.ForeignKey(
@@ -435,9 +451,12 @@ class SchoolVendor(models.Model):
 
 
 class SuccessLogin(models.Model):
-    ip_address = models.CharField(db_column='ipAddress', max_length=15, blank=True, null=True)  # Field name made lowercase.
-    user_agent = models.CharField(db_column='userAgent', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    logged_at = models.DateTimeField(db_column='loggedAt', blank=True, null=True)  # Field name made lowercase.
+    ip_address = models.CharField(
+        db_column='ipAddress', max_length=15, blank=True, null=True)
+    user_agent = models.CharField(
+        db_column='userAgent', max_length=300, blank=True, null=True)
+    logged_at = models.DateTimeField(
+        db_column='loggedAt', blank=True, null=True)
 
     user = models.ForeignKey(
         'User',
@@ -484,13 +503,17 @@ class TimetableChange(models.Model):
 
 
 class TimetableConfig(models.Model):
-    start_time = models.CharField(db_column='startTime', max_length=8, blank=True, null=True)
-    end_time = models.CharField(db_column='endTime', max_length=8, blank=True, null=True)
-    preset = models.CharField(db_column='Preset', max_length=20, blank=True, null=True)
+    start_time = models.CharField(
+        db_column='startTime', max_length=8, blank=True, null=True)
+    end_time = models.CharField(
+        db_column='endTime', max_length=8, blank=True, null=True)
+    preset = models.CharField(
+        db_column='Preset', max_length=20, blank=True, null=True)
     year = models.IntegerField(blank=True, null=True)
     week_day = models.IntegerField(db_column='weekDay', blank=True, null=True)
     sequence = models.IntegerField(blank=True, null=True)
-    is_preset = models.IntegerField(db_column='isPreset', blank=True, null=True)
+    is_preset = models.IntegerField(
+        db_column='isPreset', blank=True, null=True)
 
     school = models.ForeignKey(
         'School',
@@ -504,7 +527,8 @@ class TimetableConfig(models.Model):
 
 
 class UserToken(models.Model):
-    created_at = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    created_at = models.DateTimeField(
+        db_column='createdAt', blank=True, null=True)
     token = models.CharField(max_length=300, blank=True, null=True)
     type = models.IntegerField()
 
@@ -549,8 +573,10 @@ class User(models.Model):
     status = models.IntegerField(blank=True, null=True)
     is_admin = models.IntegerField(db_column='isAdmin', blank=True, null=True)
     created_at = models.DateField(db_column='createdAt', blank=True, null=True)
-    guardianaccesscode = models.CharField(db_column='guardianAccessCode', max_length=8, blank=True, null=True)
-    external_id = models.CharField(db_column='externalId', max_length=100, blank=True, null=True)
+    guardianaccesscode = models.CharField(
+        db_column='guardianAccessCode', max_length=8, blank=True, null=True)
+    external_id = models.CharField(
+        db_column='externalId', max_length=100, blank=True, null=True)
 
     def is_guardian(self):
         return self.type == "G"
@@ -586,9 +612,12 @@ class User(models.Model):
         managed = False
         db_table = 'users'
 
+
 class VendorToken(models.Model):
-    created_at = models.DateTimeField(db_column='createdAt', blank=True, null=True)
-    updated_at = models.DateTimeField(db_column='updatedAt', blank=True, null=True)
+    created_at = models.DateTimeField(
+        db_column='createdAt', blank=True, null=True)
+    updated_at = models.DateTimeField(
+        db_column='updatedAt', blank=True, null=True)
     vendor = models.CharField(max_length=100, blank=True, null=True)
     token = models.CharField(max_length=1000, blank=True, null=True)
 

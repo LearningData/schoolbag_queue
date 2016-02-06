@@ -1,11 +1,8 @@
 from django.http import JsonResponse
 from django.views.generic import TemplateView
-from django.core.serializers.json import DjangoJSONEncoder
 from schools.models import User, Noticeboard
-from lessons.models import ClassList
 from homeworks.services import HomeworkUtil
 
-import json
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -15,7 +12,6 @@ class IndexView(TemplateView):
             kwargs['view'] = self
 
         user = User.objects.get(pk=4587)
-
 
         configs = {
             'module': {
@@ -44,6 +40,7 @@ def classes(request):
 
     return JsonResponse({"classes": json})
 
+
 def notices(request):
     user = User.objects.get(pk=4587)
     notices = Noticeboard.all_notices(user)
@@ -56,10 +53,12 @@ def notices(request):
     return JsonResponse(
         {"status": "success", "notices": notices_arr})
 
+
 def calendar(request):
     user = User.objects.get(pk=4587)
     return JsonResponse(
         [event.to_dict() for event in user.event_set.all()], safe=False)
+
 
 def homeworks(request):
     user = User.objects.get(pk=4587)

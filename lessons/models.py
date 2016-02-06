@@ -1,12 +1,13 @@
 from django.db import models
 
+
 class ClassList(models.Model):
     class_id = models.AutoField(db_column='classID', primary_key=True)
     extra_ref = models.CharField(db_column='extraRef', max_length=10)
-    resource_id = models.CharField(db_column='resourceId',
-        max_length=60, blank=True, null=True)
-    external_id = models.CharField(db_column='externalId',
-        max_length=100, blank=True, null=True)
+    resource_id = models.CharField(
+        db_column='resourceId', max_length=60, blank=True, null=True)
+    external_id = models.CharField(
+        db_column='externalId', max_length=100, blank=True, null=True)
 
     school = models.ForeignKey(
         "schools.School",
