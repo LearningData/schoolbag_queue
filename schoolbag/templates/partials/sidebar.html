@@ -45,6 +45,7 @@
         </a>
     </li>
 
+    {% if user.is_guardian %}
     <li class="dashboard">
       <a href="{{ url.getBaseUri( %}{{ user.getController( %}">
         <span class="ld-icon-dash-top">
@@ -52,7 +53,7 @@
         {% trans "dashboard" %}
       </a>
     </li>
-
+    {% endif %}
     <li class="policies">
       <a href="policies">
         <span class="fa fa-lock"></span>{% trans "policies" %}
