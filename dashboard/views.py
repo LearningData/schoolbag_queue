@@ -3,8 +3,8 @@ from django.views.generic import TemplateView
 from django.core.serializers.json import DjangoJSONEncoder
 from schools.models import User, Noticeboard
 from lessons.models import ClassList
+from homeworks.services import HomeworkUtil
 
-from datetime import date
 import json
 
 class IndexView(TemplateView):
@@ -45,7 +45,7 @@ def classes(request):
     return JsonResponse({"classes": json})
 
 def notices(request):
-    user = User.objects.get(pk=4598)
+    user = User.objects.get(pk=4587)
     notices = Noticeboard.all_notices(user)
 
     notices_arr = [notice.to_dict() for notice in notices]
@@ -57,6 +57,12 @@ def notices(request):
         {"status": "success", "notices": notices_arr})
 
 def calendar(request):
-    user = User.objects.get(pk=4598)
+    user = User.objects.get(pk=4587)
     return JsonResponse(
         [event.to_dict() for event in user.event_set.all()], safe=False)
+
+def homeworks(request):
+    user = User.objects.get(pk=4587)
+
+    return JsonResponse(
+        {"status": "success", "homeworks": HomeworkUtil.to_dashboard(user)})
