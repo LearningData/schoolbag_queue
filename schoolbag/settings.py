@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'lessons',
     'homeworks',
     'schoolbag',
+    'accounts',
     'django_extensions'
 ]
 
