@@ -8,7 +8,7 @@ class Homework(models.Model):
     homework_id = models.AutoField(db_column='homeworkID', primary_key=True)
     set_date = models.DateField(db_column='setDate')
     due_date = models.DateField(db_column='dueDate')
-    text = models.TextField(blank=True, null=True)
+    description = models.TextField(db_column='text', blank=True, null=True)
     title = models.CharField(max_length=500, blank=True, null=True)
     owner = models.IntegerField()
     type = models.IntegerField(blank=True, null=True)
@@ -32,11 +32,23 @@ class Homework(models.Model):
         on_delete=models.CASCADE,
     )
 
-    class_list = models.ForeignKey(
+    lesson = models.ForeignKey(
         Lesson,
         db_column="timeslotID",
         on_delete=models.CASCADE,
     )
+
+    def to_dict(self):
+        return {
+            "id": self.pk,
+            "title": self.title,
+            "set_date": self.set_date,
+            "due_date": self.due_date,
+            "description": self.description,
+            "owner": self.owner,
+            "type": self.type,
+            "time": self.time
+        }
 
     def __str__(self):
         return self.title + " - " + self.teacher.name
@@ -123,7 +135,7 @@ class HomeworkUser(models.Model):
     reviewed_at = models.DateTimeField(
         db_column='reviewedDate', blank=True, null=True)
 
-    homework = models.ForeignKey(
+    info = models.ForeignKey(
         'Homework',
         db_column="homeworkId",
         on_delete=models.CASCADE,
@@ -134,6 +146,19 @@ class HomeworkUser(models.Model):
         db_column="studentId",
         on_delete=models.CASCADE,
     )
+
+    def to_dict(self):
+        return {
+            "id": self.pk,
+            "subject": self.info.class_list.subject.name,
+            "description": self.info.description,
+            "title": self.info.title,
+            "status": self.status,
+            "student": self.student.full_name(),
+            "due-date": self.info.due_date,
+            "hasPeriod": False,
+            "period": "",
+        }
 
     class Meta:
         managed = False
