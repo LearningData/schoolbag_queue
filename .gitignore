@@ -6,4 +6,5 @@ __pycache__
 logs
 dependencies
 media
+env
 *.mo
