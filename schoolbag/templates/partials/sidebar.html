@@ -59,6 +59,15 @@
         <span class="fa fa-lock"></span>{% trans "policies" %}
       </a>
     </li>
+    <li class="school-logo">
+        {% if user.school.website %}
+        <a href="{{ user.school.website }}" target="_blank">
+            <img src="{{ user.school.get_avatar }}" width="135" height="135">
+        </a>
+        {% else %}
+        <img src="{{ user.school.get_avatar }}" width="135" height="135">
+        {% endif %}
+    </li>
   </nav>
 </div>
 
