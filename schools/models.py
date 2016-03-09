@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.db.models import Q
 
+from PIL import Image
 from datetime import date
 import os
 
@@ -11,6 +12,26 @@ class Avatar(models.Model):
     size = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=40, blank=True, null=True)
     file = models.BinaryField(db_column='file')
+
+    def to_file(self, name):
+        path = "{}{}{}".format(
+            settings.MEDIA_ROOT, "img/original/", name)
+
+        file = open(path,'wb')
+        file.write(self.file)
+        file.close()
+
+    def to_thumbnail(self, name):
+        size = (67, 62)
+        original_path = "{}{}{}".format(
+            settings.MEDIA_ROOT, "img/original/", name)
+
+        thumb_path = "{}{}{}".format(
+            settings.MEDIA_ROOT, "img/thumb/", name)
+
+        image = Image.open(original_path)
+        image.thumbnail(size)
+        image.save(thumb_path, "JPEG")
 
     class Meta:
         managed = False
@@ -426,6 +447,15 @@ class School(models.Model):
         on_delete=models.CASCADE,
     )
 
+    def get_avatar(self):
+        file_path = "{}img/thumb/{}".format(
+            settings.MEDIA_URL, self.avatar.name)
+
+        if os.path.exists(file_path):
+            return "{}img/school-default.png".format(settings.STATIC_URL)
+
+        return file_path
+
     def __str__(self):
         return self.name
 
@@ -591,12 +621,13 @@ class User(models.Model):
         return "{} {}".format(self.name, self.last_name)
 
     def get_avatar(self):
-        file_path = "media/{}".format(self.avatar.name)
+        file_path = "{}img/thumb/{}".format(
+            settings.MEDIA_URL, self.avatar.name)
 
         if os.path.exists(file_path):
-            return file_path
+            return "{}img/avatar-default.png".format(settings.STATIC_URL)
 
-        return "media/{}".format(self.photo.name)
+        return file_path
 
     def get_classes(self):
         if self.is_teacher():
