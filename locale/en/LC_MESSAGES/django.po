@@ -52,7 +52,7 @@ msgstr "Contact Us"
 #: accounts/templates/partials/header-nologged.html:6
 #: schoolbag/templates/base.html:15
 msgid "title"
-msgstr "Title"
+msgstr "Schoolbag"
 
 #: dashboard/templates/index.html:11
 #: schoolbag/templates/partials/sidebar.html:32
