@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'homeworks',
     'schoolbag',
     'accounts',
-    'django_extensions'
+    'django_extensions',
+    # 'django_php_bridge'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -76,6 +77,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'schoolbag.wsgi.application'
+
+# SESSION_ENGINE = 'django_php_bridge.backends.db'
+# SESSION_COOKIE_NAME = 'PHPSESSID'
+
+# AUTH_USER_MODEL = 'schools.User'
 
 
 # Database
@@ -133,7 +139,7 @@ LOCALE_PATHS = (
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = '/home/vagrant/media/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
