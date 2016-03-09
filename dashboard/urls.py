@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^service/classes/$', classes, name='dashboard-classes'),
     url(r'^service/notices/$', notices, name='dashboard-notices'),
     url(r'^service/calendar/$', calendar, name='dashboard-calendar'),
-    url(r'^service/homeworks/$', homeworks, name='dashboard-homeworks')
+    url(r'^service/homeworks/$', homeworks, name='dashboard-homeworks'),
 ]
