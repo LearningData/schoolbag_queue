@@ -20,10 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7&0r-05!%1^*5o*&tlkec%z*i9h05tt715mt95&c-_f*rvdu3*'
-
+SECRET_KEY = os.environ.get('SECRET_KEY', 'change-it')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = []
 
@@ -92,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'schoolbag',
         'USER': 'root',
-        'PASSWORD': ''
+        'PASSWORD': '',
     }
 }
 
@@ -134,13 +133,16 @@ LOCALE_PATHS = (
 )
 
 
+# SESSION_ENGINE = 'accounts.backends.db'
+# SESSION_COOKIE_NAME = 'PHPSESSID'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'http://127.0.0.1:7001/'
 STATIC_ROOT = 'staticfiles'
 MEDIA_ROOT = '/home/vagrant/media/'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'http://127.0.0.1:7001/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
