@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from schools.models import User, Noticeboard
 from homeworks.services import HomeworkUtil
 
@@ -11,8 +12,6 @@ class IndexView(TemplateView):
         if 'view' not in kwargs:
             kwargs['view'] = self
 
-        user = User.objects.get(pk=4587)
-
         configs = {
             'module': {
                 'timetable': True,
@@ -23,27 +22,21 @@ class IndexView(TemplateView):
             }
         }
 
-        kwargs['user'] = user
         kwargs['configs'] = configs
 
         return kwargs
 
 
 def classes(request):
-    # PAUL: 4598
-    # WALSH: 4587
-    user = User.objects.get(pk=4598)
-
     json = []
-    for class_list in user.get_classes():
+    for class_list in request.user.get_classes():
         json.append({"id": class_list.pk, "subject": class_list.subject.name})
 
     return JsonResponse({"classes": json})
 
 
 def notices(request):
-    user = User.objects.get(pk=4587)
-    notices = Noticeboard.all_notices(user)
+    notices = Noticeboard.all_notices(request.user)
 
     notices_arr = [notice.to_dict() for notice in notices]
 
@@ -55,13 +48,10 @@ def notices(request):
 
 
 def calendar(request):
-    user = User.objects.get(pk=4587)
     return JsonResponse(
-        [event.to_dict() for event in user.event_set.all()], safe=False)
+        [event.to_dict() for event in request.user.event_set.all()], safe=False)
 
 
 def homeworks(request):
-    user = User.objects.get(pk=4587)
-
     return JsonResponse(
-        {"status": "success", "homeworks": HomeworkUtil.to_dashboard(user)})
+        {"status": "success", "homeworks": HomeworkUtil.to_dashboard(request.user)})
