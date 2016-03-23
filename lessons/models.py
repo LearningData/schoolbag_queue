@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ObjectDoesNotExist
 
 
 class ClassList(models.Model):
@@ -46,8 +47,12 @@ class ClassList(models.Model):
         related_name="teachers")
 
     def __str__(self):
-        return "{} {} {}".format(
-            self.extra_ref, self.subject.name, self.cohort.stage)
+        try:
+            return "{} {} {}".format(
+                self.extra_ref, self.subject.name, self.cohort.stage)
+        except ObjectDoesNotExist:
+            return "{}".format(
+                self.extra_ref)
 
     class Meta:
         managed = False
@@ -68,6 +73,12 @@ class ClassListOfUsers(models.Model):
         db_column="studentID",
         on_delete=models.CASCADE,
     )
+
+    def __str__(self):
+        try:
+            return str(self.class_list.extra_ref)
+        except ObjectDoesNotExist:
+            return str(self.class_list_id)
 
     class Meta:
         managed = False
