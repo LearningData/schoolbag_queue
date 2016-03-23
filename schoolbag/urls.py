@@ -22,5 +22,6 @@ from . import settings
 urlpatterns = [
     url(r'', include('accounts.urls')),
     url(r'', include('dashboard.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'', include('jobs.urls')),
+    url(r'^administration/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
