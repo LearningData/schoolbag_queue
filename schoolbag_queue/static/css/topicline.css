@@ -1,0 +1,369 @@
+.topicLn {
+  display: block;
+  text-align: center;
+}
+.topicLn .resource-block.left-block .arrow {
+  border-left-color: #b6b7b8;
+  right: -22px;
+}
+.topicLn .resource-block.left-block .wrapper {
+  float: left;
+  border-right: 1px solid #e5e6e7;
+  padding: 0 30px 0 10px;
+}
+.topicLn .resource-block.left-block .wrapper .icon-sign {
+  right: -46px;
+}
+.topicLn .resource-block.right-block .wrapper .icon-sign, .topicLn .resource-block.left-block .wrapper .icon-sign {
+  position: absolute;
+}
+.topicLn .resource-block .icon-sign.ld-icon-new:before {
+  font-family: ld-icon;
+  content: "\e603";
+}
+#previewResourceModal .topicLn .resource-block, #previewResourceModal .topicLn .wrapper {
+  padding: 0;
+}
+#previewResourceModal .topicLn .resource-block .segment {
+  border-radius: 0;
+}
+#previewResourceModal .topicLn .resource-block .segment + .segment {
+  padding-top: 20px;
+}
+#previewResourceModal .topicLn h5 {
+  text-align: left;
+  cursor: pointer;
+}
+#previewResourceModal .topicLn .activity {
+  display: none;
+}
+.topicLn .resource-block .segment {
+  padding: 20px 55px 10px 20px;
+  color: #fff;
+  position: relative;
+}
+.topicLn .resource-block .segment.content {
+  color: inherit
+}
+.topicLn .resource-block .segment label {
+  color: #fff;
+}
+.topicLn .resource-block .segment.content label {
+  color: #939598;
+}
+.topicLn .segment.description {
+  background: #bcbec0;
+  border-bottom: 1px solid #10a236;
+  border-radius: 4px 4px 0 0;
+}
+.topicLn .resource-block .segment + .segment {
+  padding: 10px 20px 20px 20px;
+}
+.topicLn .resource-block.image .segment.description {
+  border-bottom-color: #52c0dc;
+}
+.topicLn .resource-block.link .segment.description {
+  border-bottom-color: #a945a0;
+}
+.topicLn .resource-block.text .segment.description, .topicLn .resource-block.rich-text .segment.description {
+  border-bottom-color: #ff960c;
+}
+.topicLn .resource-block.video .segment.description {
+  border-bottom-color: #ff0097;
+}
+.topicLn .resource-block.audio .segment.description, .topicLn .resource-block.audio-file .segment.description {
+  border-bottom-color: #dc3b42;
+}
+.topicLn .resource-block.multi-resource .segment.description {
+  border-bottom-color: #2e3192;
+}
+.topicLn .resource-block .icon-sign.ld-icon-new {
+  color: #FF0097;
+  padding: 1px;
+}
+.topicLn .resource-block .resource .file-link .fa {
+  margin: 0;
+}
+.topicLn .resource-block.link .resource a {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.topicLn .resource-block.link .resource .fa.fa-external-link
+
+
+.topicLn .resource-block.link .title {
+  cursor: default;
+}
+.topicLn .resource-block .resource img {
+  max-width: 100%;
+  max-height: 400px;
+}
+.topicLn .resource-block.image .resource a {
+  color: #52c0dc;
+}
+.topicLn .resource-block .resource .multi-preview img {
+  max-height: 35px;
+  display: block;
+}
+.topicLn .resource-block .resource .multi-preview a {
+  display: block;
+}
+.topicLn hr {
+  border-color: #e5e6e7;
+}
+.topicLn .resource-block .resource hr {
+  border-color: #d8d8d9;
+}
+.topicLn .resource-block .activity {
+  margin-left: 25px;
+  max-width: 45%;
+  padding: 5px 0;
+  height: 30px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #4d4d4f;
+}
+.topicLn .resource-block.right-block .activity {
+  margin-right: 25px;
+  float: right;
+}
+@media screen and (max-width: 767px) {
+  .topicLn .resource-block {
+    width: 100%;
+  }
+  .topicLn .resource-block .wrapper:nth-child(n) {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 0 0;
+    border: none;
+  }
+  .topicLn .resource-block:nth-child(n) .wrapper .icon-sign {
+    top: 10px;
+    left: auto;
+    right: 10px;
+    background: transparent;
+  }
+}
+.modal .topicLn .resource-block {
+  width: 100%;
+  border: 1px solid #d8d8d9;
+  padding: 5px;
+  margin: 5px 0;
+}
+.modal.topicLn .ld-card:nth-child(n) .wrapper .icon-sign {
+  top: 10px;
+  left: auto;
+  right: 10px;
+  background: transparent;
+}
+.topicLn a.text-link {
+  color: #2e3192;
+}
+/*********************************************************************
+ *******************Topic Line Defaults*******************************
+ *********************************************************************/
+
+.topicLn {
+  display: block;
+  text-align: center;
+}
+.topicLn .topicLn-header {
+  text-align: left;
+  cursor: pointer;
+}
+.topicLn h3 {
+  text-align: left;
+}
+.topicLn .resource-block {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  min-height: 40px;
+}
+.topicLn .resource-block .arrow {
+  position: absolute;
+  top: 0;
+  border-color: transparent;
+  border-width: 11px;
+  border-style: solid;
+  margin-top: 5px;
+}
+
+.topicLn .resource-block.right-block .arrow {
+  border-right-color: #b6b7b8;
+  left: -22px;
+}
+.topicLn .resource-block .wrapper {
+  position: relative;
+  width: 50%;
+  color: #4d4d4f;
+}
+.topicLn .resource-block.right-block .wrapper {
+  float: right;
+  padding: 0px 10px 10px 40px;
+  border-left: 1px solid #e5e6e7;
+}
+
+.topicLn .resource-block:last-child .wrapper {
+  border: none;
+}
+.topicLn .resource-block.right-block .wrapper .icon-sign {
+  left: -56px;
+}
+
+.topicLn .resource-block .icon-sign {
+  cursor: pointer;
+}
+
+.ld-classes .topicLn .topicLn-header {
+  background-color: #e6e7e8;
+  padding: 20px 15px ;
+  margin: 15px 0;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  float: left;
+}
+.ld-classes .topicLn .topicLn-header > span {
+  display: table-cell;
+  padding: 0 2px;
+  vertical-align: middle;
+}
+.ld-classes .topicLn .topicLn-header:hover {
+  background-color: #D6D7D8
+}
+.ld-classes .topicLn .topicLn-header .topic-title {
+  width: 100%;
+}
+.ld-classes .topicLn .btn-icon {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  float: right;
+  margin: 0 0 0 30px;
+}
+.ld-classes .topicLn .topicLn-header .btn-icon {
+  color: #B1B3B6;
+  margin: 0;
+  float: none;
+  padding: 0 10px 0 30px;
+}
+.ld-classes .topicLn .btn-icon:hover {
+  color: #8D8F91 !important;
+}
+.ld-classes .topicLn .topicLn-header .resource-count div {
+  white-space: nowrap;
+  background-color: #b1b3b6;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 7px;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+.ld-classes .topicLn .topicLn-header .new {
+  color: #ff0097;
+  font-size: 24px;
+  padding: 3px 4px;
+  border-radius: 3px;
+}
+
+.ld-classes .topicLn.new-topic {
+  font-size: 18px;
+  display: inline-block;
+  cursor: pointer;
+}
+.ld-classes .topicLn .resource-block.ui-sortable-placeholder {
+  display: inline-block;
+}
+.ld-classes .topicLn .ui-sortable-helper .wrapper {
+  position: relative;
+  display: block;
+  width: 50%;
+  padding: 0 40px 0 10px;
+}
+.ld-classes .topicLn .ui-sortable-helper .resource, .ld-classes .topicLn .ui-sortable-helper .activity {
+  display: none;
+}
+.ld-classes .topicLn .resource-block .resource {
+  position: relative;
+  display: block;
+  border-radius: 4px;
+  background: #e6e7e8;
+}
+.ld-classes .topicLn .resource-block .resource iframe {
+  max-width: 100%;
+}
+.ld-classes .topicLn .ui-sortable-helper .wrapper .icon-sign {
+  right: -16px;
+}
+.ld-classes .topicLn .ui-sortable-helper .icon-sign {
+  position: absolute;
+  top: 0px;
+  border: 3px solid;
+  border-radius: 15px;
+  padding: 5px;
+  background: #fff;
+  width: 31px;
+  height: 30px;
+  text-align: center;
+}
+.ld-classes .topicLn .resource-block .fa-pencil {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.ld-classes .topicLn .resource-block .resource .btn-box {
+  margin-top: 5px;
+}
+.ld-classes .topicLn .resource-block .resource .btn-box .btn-delete {
+  padding-top: 5px;
+}
+.ld-classes .topicLn .resource-block .btn-delete {
+  padding-right: 0px;
+}
+
+/*resources css*/
+/* topicLine */
+
+.modal .topicLn .ld-card {
+  width: 100%;
+  height: 100%;
+}
+.modal .topicLn .ld-card .wrapper:nth-child(n) {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 0 0;
+  border: none;
+}
+.modal .topicLn .ld-card:nth-child(n) .wrapper .icon-sign {
+  top: 10px;
+  left: auto;
+  right: 10px;
+  background: transparent;
+}
+.modal .topicLn .ld-card .resource img, .modal .topicLn .ld-card .resource .info {
+  max-height: 250px;
+}
+.modal .topicLn .ld-card.text .resource, .modal .topicLn .ld-card.rich-text .resource {
+  max-height: 250px;
+}
+.modal .topicLn .ld-card .activity {
+  display: none;
+}
+.modal .topicLn .resource-block .wrapper:nth-child(n) {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 0 0;
+  border: none;
+}
+.modal .topicLn .resource-block:nth-child(n) .wrapper .icon-sign {
+  top: 50%;
+  margin: -13px 0 0;
+  right: 13px;
+  position: absolute;
+}

@@ -1,0 +1,3 @@
+var translate = {
+    "events": "Imeachtaí"
+}

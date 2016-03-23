@@ -1,0 +1,161 @@
+.media-body .fa{
+  margin-right: 5px;
+}
+.school-logo.pull-left {
+  max-width: 25%;
+  height: 135px;
+  margin-right: 40px;
+}
+.school-logo img {
+  max-width: 100%;
+  max-height: 135px;
+}
+
+.info-users-gradient  {
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-bg-gradient {
+  position: absolute;
+  height: 150px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 1%, rgba(255,255,255,1) 85%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(255,255,255,0)), color-stop(85%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 1%,rgba(255,255,255,1) 85%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 1%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 1%,rgba(255,255,255,1) 85%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+}
+
+.info-chevron {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  font-size: 24px;
+  left: 50%;
+  margin-left: -15px;
+  color: #939598;
+  cursor: pointer;
+}
+
+/* Timetable */
+.timetable .column {
+  float: left;
+  width: 20%;
+  border-right: solid 1px #DCDDDE;
+  border-left: solid 1px #DCDDDE;
+  margin: 0 0 10px
+}
+.timetable .column .slot {
+  position: relative;
+  padding: 8px;
+  height: 43px;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+  background-color: #f1f2f2;
+}
+.timetable .column .slot:last-of-type {
+  border-bottom: 1px solid #ddd;
+}
+.timetable .column .slot.break {
+  background-color: #E6E7E8;
+  text-transform: capitalize;
+}
+.school-user-action  {
+  padding: 10px 15px;
+}
+.school-user-action h5  {
+  color: #d1d3d4;
+  margin-bottom: 20px;
+}
+.school-user-action a  {
+  display: inline-block;
+  padding-right: 15px;
+  margin-right: 10px;
+  border-right: solid 1px #dcddde;
+  text-align: center;
+  font-size: 12px;
+}
+.school-user-action a .fa  {
+  display: block;
+}
+.school-user-action a:last-child  {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ld-user-control a  {
+  display: inline-block;
+  text-align: center;
+  margin: 0 20px 0 0;
+  border-right: solid 1px #bcbec0;
+  padding-right: 30px;
+}
+.ld-user-control a:last-child  {
+  border-right: none;
+  padding-right: 0;
+}
+.ld-user-control a .fa  {
+  display: block;
+}
+
+.teacher-info-box.school-users span,
+.student-info-box.school-users span  {
+  cursor: default;
+}
+.teacher-info-box.school-users a span,
+.student-info-box.school-users a span  {
+  cursor: pointer;
+}
+
+/* Guardian */
+
+.school-guardian-box-icon {
+  background-color: #f1f2f2;
+  border: 2px solid #d5d5d5;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.student-info-box.school-guardian .school-guardian-box-icon .fa,
+.student-info-box.school-guardian .school-guardian-box-icon [class^="ld-icon-"] {
+  line-height: 55px;
+  color: #939598;
+  margin-right: 0;
+  margin-left: -5px;
+}
+.student-info-box.school-guardian .school-guardian-box-icon .fa.fa-check  {
+  font-size: 35px;
+  margin-left: 0;
+}
+.student-info-box.school-guardian .school-guardian-name   {
+  display:inline-block;
+  margin-top: 8px;
+}
+.student-info-box.school-guardian .school-users-invite  {
+  display:none;
+}
+.student-info:hover .school-users-invite  {
+  display: inline-block;
+}
+.student-info-box.school-guardian {
+  border-bottom: none!important;
+}
+.student-info-box.school-guardian .fa {
+  margin-right: 10px;
+  line-height: 3px;
+}

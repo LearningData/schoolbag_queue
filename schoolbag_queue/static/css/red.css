@@ -1,0 +1,32 @@
+/*.red a,*/
+.ld-timetable .slot .class-code, .red .ld-new-buttons a,
+.red .ld-new-buttons .ld-icon-new, .user-profile-actions .red .fa,
+.red .no-content .action, .red a.color {
+    color: #DC3B42
+}
+
+.red h1, .red .tooltip-inner, .red .ld-student-status a,
+.red .btn-icon, .red .btn, .red.ld-box .ld-box-head .dashboard-head,
+.red header, .red .uploader .action, .red div.ld-CheckClass span.checked,
+.red div.ld-CheckClass.hover span.checked, .red div.ld-RadioClass span.checked,
+.red div.ld-RadioClass.hover span.checked, .red .ld-tabs.nav ul li a, .red .timetable .header {
+    background-color: #dc3b42;
+}
+
+/* hover background */
+.red .btn-icon:hover, .red .btn:hover, .red .ld-tabs.nav ul li:hover a {
+    background-color: #c62433;
+}
+.red .ld-tabs.nav ul li.active a {
+    border-bottom-color: #c62433;
+}
+
+.red .form-control:focus {
+    border-color: #dc3b42;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(229,36,45, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(229,36,45, 0.075);
+}
+.red .modal-title, .red div.ld-CheckClass span, .red div.ld-CheckClass.hover span, .red div.ld-RadioClass span, .red div.ld-RadioClass.hover span {
+    border-color: #dc3b42;
+}

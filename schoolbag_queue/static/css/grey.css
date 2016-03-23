@@ -1,0 +1,37 @@
+.grey h1, .grey .btn-icon, .grey .btn, .grey.ld-box .ld-box-head .title,
+.grey .uploader .action, .grey header, .grey .tooltip-inner,
+.grey .ld-student-status a, .grey div.ld-CheckClass span.checked,
+.grey div.ld-CheckClass.hover span.checked, .grey div.ld-RadioClass span.checked,
+.grey div.ld-RadioClass.hover span.checked, .grey .nav ul li a, .grey .ld-checkbox input:checked + .display {
+    background-color: #939598;
+}
+.grey .btn-icon:hover, .grey .btn:hover {
+    background-color: #797b7b;
+}
+.grey .ld-tabs.nav ul li.active a {
+    border-bottom-color: #797b7b;
+}
+.grey .ld-new-buttons, .grey .ld-new-buttons .ld-icon-new, .grey .btn-add, .grey a.color {
+    color: #939598;
+}
+.grey .form-control:focus {
+    border-color: #939598;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 151, 0.6);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 151, 0.6);
+}
+.grey .modal-title, .grey div.ld-CheckClass span, .grey div.ld-CheckClass.hover span, .grey div.ld-RadioClass span, .grey div.ld-RadioClass.hover span {
+    border-color: #939598;
+}
+/* hover background */
+.grey .form-control:focus, .grey input:focus, .grey textarea:focus,
+.grey .note-editor .note-editable:focus {
+  border-color: #939598;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(58, 40, 19, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(58, 40, 19, 0.6);
+}
+
+/* tooltip border arrow */
+.grey .tooltip.top .tooltip-arrow {
+    border-top-color: #939598;
+}
