@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'schoolbag',
     'accounts',
     'django_extensions',
+    'djcelery'
     # 'django_php_bridge'
 ]
 
@@ -51,7 +52,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'accounts.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -89,13 +90,19 @@ WSGI_APPLICATION = 'schoolbag.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'schoolbag_django',
+        'USER': 'root',
+        'PASSWORD': '',
+    },
+    'schoolbag': {
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'schoolbag',
         'USER': 'root',
         'PASSWORD': '',
     }
 }
 
-
+DATABASE_ROUTERS = ['schoolbag.routers.SchoolbagDBRouter',]
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
