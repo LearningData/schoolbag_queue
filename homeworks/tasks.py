@@ -1,5 +1,6 @@
 from schoolbag.celery import app
 from .models import HomeworkLog
+from datetime import datetime
 
 
 @app.task
@@ -8,6 +9,7 @@ def log(homework_id, status, date):
 
     if homework:
         print("Logging homework {} to {}".format(homework_id, status))
+        date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
 
         log = HomeworkLog(
             homework_id=homework_id,
