@@ -1,4 +1,4 @@
-from schoolbag.celery import app
+from schoolbag_queue.celery import app
 from .models import HomeworkLog
 from datetime import datetime
 

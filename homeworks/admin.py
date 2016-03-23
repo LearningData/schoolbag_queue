@@ -4,4 +4,4 @@ from .models import Homework
 
 @admin.register(Homework)
 class Homework(admin.ModelAdmin):
-    pass
+    exclude = ('homework_files',)

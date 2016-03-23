@@ -3,7 +3,6 @@ from django.db import models
 from schools.models import School, User
 from lessons.models import ClassList, Lesson
 
-
 class Homework(models.Model):
     homework_id = models.AutoField(db_column='homeworkID', primary_key=True)
     set_date = models.DateField(db_column='setDate')

@@ -11,7 +11,7 @@ class Avatar(models.Model):
     name = models.CharField(max_length=100)
     size = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=40, blank=True, null=True)
-    file = models.BinaryField(db_column='file')
+    file = models.TextField(db_column='file')
 
     def to_file(self, name):
         path = "{}{}{}".format(
