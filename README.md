@@ -12,6 +12,9 @@ Django application to runs schoolbag tasks
     
     
 ## APP
+  * **Directory**
+    
+    `/home/azureuser/apps/schoolbag_queue`
   * **Activating environment**
   
     `source /home/azureuser/.envs/queue/bin/activate`
@@ -23,4 +26,9 @@ Django application to runs schoolbag tasks
   * **Starting django server in development**
   
     ./manage.py runserver
+
+  * **Starting foreman and django together**
+    
+    After Activate the environment run:
+    `foreman start`
   
